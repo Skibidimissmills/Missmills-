@@ -30,14 +30,38 @@
             font-size: 18px;
             color: #666;
         }
+        .random-text {
+            font-size: 14px;
+            color: #999;
+            margin-top: 10px;
+            font-style: italic;
+        }
     </style>
 </head>
 <body>
     <div class="content">
         <h1>Welcome to MissMills.com</h1>
         <p>Redirecting you to Google Classroom...</p>
+        <p class="random-text" id="randomText"></p>
     </div>
     <script>
+        // Array of random texts
+        var randomTexts = [
+            "I'm gonna give you an ISAMS!",
+            "Close your iPads and open your books.",
+            "If you're done with your work, go to world-geography-games.com"
+        ];
+
+        // Function to display random text
+        function displayRandomText() {
+            var randomIndex = Math.floor(Math.random() * randomTexts.length);
+            document.getElementById("randomText").textContent = randomTexts[randomIndex];
+        }
+
+        // Call the function to display random text when the page loads
+        displayRandomText();
+
+        // Redirect after 1 second
         setTimeout(function() {
             window.location.href = "https://classroom.google.com";
         }, 1000); // 1 second
