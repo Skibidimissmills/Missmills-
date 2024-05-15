@@ -4,14 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome to MissMills.com</title>
-    <script type="text/javascript">
-        function redirect() {
-            window.location.href = "https://classroom.google.com";
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
         }
-        setTimeout(redirect, 1000); // Redirect
-    </script>
+        .content {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        p {
+            font-size: 18px;
+            color: #666;
+        }
+    </style>
 </head>
 <body>
-    <h1>Redirecting you to Google Classroom, give us a second</h1>
+    <div class="content">
+        <h1>Welcome to MissMills.com</h1>
+        <p>Redirecting you to Google Classroom...</p>
+    </div>
+    <script>
+        setTimeout(function() {
+            window.location.href = "https://classroom.google.com";
+        }, 1000); // 1 second
+    </script>
 </body>
 </html>
