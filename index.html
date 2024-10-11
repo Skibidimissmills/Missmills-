@@ -138,7 +138,6 @@
             }
         }
 
-        /* Fade-in-up animation */
         @keyframes fadeInUp {
             to {
                 opacity: 1;
@@ -146,7 +145,6 @@
             }
         }
 
-        /* Text for downloading message */
         .loading-message {
             position: absolute;
             bottom: 10px;
@@ -164,7 +162,6 @@
             display: none;
         }
 
-        /* Warning message styles */
         .warning-message {
             position: absolute;
             top: 20px;
@@ -191,7 +188,6 @@
             }
         }
 
-        /* Learn more link styles */
         .learn-more {
             margin-top: 15px;
             color: #007BFF;
@@ -202,6 +198,28 @@
         }
 
         .learn-more:hover {
+            color: #0056b3;
+        }
+
+        .footer-announcement {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #292b2c;
+            padding: 10px 0;
+            text-align: center;
+            color: #e0e0e0;
+            font-size: 14px;
+            z-index: 2;
+        }
+
+        .footer-announcement a {
+            color: #007BFF;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .footer-announcement a:hover {
             color: #0056b3;
         }
     </style>
@@ -235,6 +253,10 @@
         <div class="loader-redirect"></div>
     </div>
 
+    <div class="footer-announcement">
+        miss-mills.com теперь доступен на русском языке! <a href="https://www.miss-mills.com/russian-version" target="_blank">Нажмите здесь, чтобы узнать больше</a>.
+    </div>
+
     <script>
         const background = document.querySelector('.background');
         const loadingMessage = document.getElementById('loading-message');
@@ -248,16 +270,13 @@
 
         const randomImage = images[Math.floor(Math.random() * images.length)];
 
-        // Show loading message while image is downloading
         loadingMessage.classList.remove('hidden');
-
         background.style.backgroundImage = `url(${randomImage})`;
 
         const img = new Image();
         img.src = randomImage;
         img.onload = () => {
             background.style.opacity = '1';
-            // Hide loading message once the image is fully loaded
             loadingMessage.classList.add('hidden');
         };
 
