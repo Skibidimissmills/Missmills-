@@ -163,6 +163,47 @@
         .hidden {
             display: none;
         }
+
+        /* Warning message styles */
+        .warning-message {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(255, 255, 255, 0.9);
+            color: #ff4d4d;
+            padding: 15px 25px;
+            border-radius: 10px;
+            font-size: 18px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            z-index: 2;
+            animation: fadeIn 0.5s;
+            font-weight: bold;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Learn more link styles */
+        .learn-more {
+            margin-top: 15px;
+            color: #007BFF;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .learn-more:hover {
+            color: #0056b3;
+        }
     </style>
 </head>
 <body>
@@ -171,7 +212,12 @@
         <div class="overlay"></div>
     </div>
 
-    <!-- Loading message for "Downloading image" -->
+    <div class="warning-message">
+        BREAKING NEWS: Miss Mills is leaving AMADEUS next year!
+        <br>
+        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&pp=ygUJcmljayByb2xs" class="learn-more" target="_blank">Learn more</a>
+    </div>
+
     <div class="loading-message hidden" id="loading-message">
         <div class="loader-download"></div>
         Downloading image, please give us a second...
@@ -184,7 +230,6 @@
         <button class="button" onclick="redirectTo('https://world-geography-games.com')">World Geography Games</button>
     </div>
 
-    <!-- Loading screen for "Redirecting" with large loader -->
     <div class="container hidden animate__animated animate__fadeInUp" id="loading-screen" style="text-align: center;">
         <div class="title">Redirecting...</div>
         <div class="loader-redirect"></div>
